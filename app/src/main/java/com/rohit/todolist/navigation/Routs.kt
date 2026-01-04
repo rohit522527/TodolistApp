@@ -8,4 +8,8 @@ sealed class Routs {
     object SplashScreen: Routs()
     @Serializable
     object HomeScreen: Routs()
+    @Serializable
+    object AddTaskScreen: Routs()
+    @Serializable
+    object EditTaskScreen: Routs()
 }
