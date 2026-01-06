@@ -9,22 +9,23 @@ import com.rohit.todolist.screens.AddTaskScreen
 import com.rohit.todolist.screens.EditTaskScreen
 import com.rohit.todolist.screens.HomeScreen
 import com.rohit.todolist.screens.SplashScreen
+import com.rohit.todolist.viewmodels.TaskViewModel
 
 @Composable
-fun AppNavigation (){
+fun AppNavigation (viewModel: TaskViewModel){
     val navController = rememberNavController()
     NavHost(navController=navController, startDestination = Routs.SplashScreen ){
         composable<Routs.SplashScreen>{
             SplashScreen(navController)
         }
         composable<Routs.HomeScreen>{
-            HomeScreen(navController)
+            HomeScreen(navController,viewModel)
         }
         composable<Routs.AddTaskScreen> {
-            AddTaskScreen(navController)
+            AddTaskScreen(navController,viewModel)
         }
         composable <Routs.EditTaskScreen>{
-            EditTaskScreen(navController)
+            EditTaskScreen(navController,viewModel)
         }
     }
 }
